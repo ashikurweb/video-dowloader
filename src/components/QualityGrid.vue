@@ -92,7 +92,7 @@
     <div class="mb-6">
       <h3 class="font-medium mb-2">Ready to Download</h3>
       <p class="text-sm text-gray-600 mb-4">{{ activeTab === 'video' ? '1440p • 650 MB • MP4' : '256 kbps • 14 MB • M4A' }}</p>
-      <button class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 flex items-center">⬇️ Download</button>
+      <button v-ripple class="btn-glossy btn-green"><i class="fas fa-download"></i><span>Download</span></button>
     </div>
   </div>
 </template>

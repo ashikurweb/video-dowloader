@@ -33,9 +33,9 @@
         placeholder="tailwind 4 vue 3 ant design vue make this design"
         class="flex-grow px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-      <button @click="clearUrl" class="px-4 py-2 text-gray-500 hover:text-gray-700">✖</button>
-      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 flex items-center">📋 Paste</button>
-      <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center" :disabled="loading" @click="analyze">🔍 {{ loading ? 'Analyzing...' : 'Analyze' }}</button>
+      <button v-ripple @click="clearUrl" class="px-4 py-2 text-gray-500 hover:text-gray-700 rounded-md"><i class="fas fa-times"></i></button>
+      <button v-ripple class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 flex items-center gap-2"><i class="far fa-clipboard"></i><span>Paste</span></button>
+      <button v-ripple class="btn-glossy btn-blue" :disabled="loading" @click="analyze"><i class="fas fa-search"></i><span>{{ loading ? 'Analyzing...' : 'Analyze' }}</span></button>
     </div>
   </div>
 </template>

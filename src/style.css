@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-glossy {
+    @apply inline-flex items-center gap-2 h-10 px-4 rounded-lg text-sm font-semibold text-white shadow-sm hover:shadow-md transition active:translate-y-[1px];
+    --btn-start: rgb(16 185 129);
+    --btn-end: rgb(5 150 105);
+    background-image: linear-gradient(to bottom, var(--btn-start), var(--btn-end));
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-blue { --btn-start: rgb(59 130 246); --btn-end: rgb(37 99 235); }
+  .btn-green { --btn-start: rgb(16 185 129); --btn-end: rgb(5 150 105); }
+  .btn-glossy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+}
+
+@keyframes ripple {
+  from { width: 0; height: 0; opacity: .5; transform: translate(-50%, -50%) scale(0.8); }
+  to { width: var(--ripple-size); height: var(--ripple-size); opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
+
+.ripple-circle {
+  position: absolute;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  animation: ripple .45s ease-out;
+  pointer-events: none;
+}
+.ripple-circle.light { background: rgba(255,255,255,.55); }
+.ripple-circle.dark { background: rgba(0,0,0,.15); }
