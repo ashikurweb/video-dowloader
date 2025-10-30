@@ -4,11 +4,26 @@
     <p class="text-gray-600 text-center mb-6">Paste your video URL below and select your preferred quality</p>
 
     <div class="flex justify-center space-x-4 mb-6">
-      <button class="flex items-center px-4 py-2 bg-red-100 text-red-600 rounded-full">▶ YouTube</button>
-      <button class="flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full">f Facebook</button>
-      <button class="flex items-center px-4 py-2 bg-pink-100 text-pink-600 rounded-full">◎ Instagram</button>
-      <button class="flex items-center px-4 py-2 bg-black text-white rounded-full">♪ TikTok</button>
-      <button class="flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full">G Google</button>
+      <button class="flex items-center px-4 py-2 rounded-full bg-red-100 text-red-600 gap-2">
+        <SocialIcon name="YouTube" />
+        <span>YouTube</span>
+      </button>
+      <button class="flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-600 gap-2">
+        <SocialIcon name="Facebook" />
+        <span>Facebook</span>
+      </button>
+      <button class="flex items-center px-4 py-2 rounded-full bg-pink-100 text-pink-600 gap-2">
+        <SocialIcon name="Instagram" />
+        <span>Instagram</span>
+      </button>
+      <button class="flex items-center px-4 py-2 rounded-full bg-black text-white gap-2">
+        <SocialIcon name="TikTok" />
+        <span>TikTok</span>
+      </button>
+      <button class="flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 gap-2">
+        <SocialIcon name="Google" />
+        <span>Google</span>
+      </button>
     </div>
 
     <div class="flex gap-2">
@@ -27,6 +42,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import SocialIcon from './icons/SocialIcon.vue'
 
 const urlInput = ref('tailwind 4 vue 3 ant design vue make this design')
 const loading = ref(false)
