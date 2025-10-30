@@ -27,13 +27,16 @@
     </div>
 
     <div class="flex gap-2">
-      <input
-        type="text"
-        v-model="urlInput"
-        placeholder="tailwind 4 vue 3 ant design vue make this design"
-        class="flex-grow px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <button v-ripple @click="clearUrl" class="px-4 py-2 text-gray-500 hover:text-gray-700 rounded-md"><i class="fas fa-times"></i></button>
+      <div class="input-wrap flex-1">
+        <i class="fas fa-link input-icon"></i>
+        <input
+          type="text"
+          v-model="urlInput"
+          placeholder="Paste your video URL here..."
+          class="input-modern pl-9"
+        />
+      </div>
+      <button v-ripple @click="clearUrl" class="px-4 py-2 rounded-md bg-red-50 text-red-600 hover:bg-red-100"><i class="fas fa-times"></i></button>
       <button v-ripple class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 flex items-center gap-2"><i class="far fa-clipboard"></i><span>Paste</span></button>
       <button v-ripple class="btn-glossy btn-blue" :disabled="loading" @click="analyze"><i class="fas fa-search"></i><span>{{ loading ? 'Analyzing...' : 'Analyze' }}</span></button>
     </div>
@@ -44,7 +47,7 @@
 import { ref } from 'vue'
 import SocialIcon from './icons/SocialIcon.vue'
 
-const urlInput = ref('tailwind 4 vue 3 ant design vue make this design')
+const urlInput = ref('')
 const loading = ref(false)
 
 function clearUrl() {

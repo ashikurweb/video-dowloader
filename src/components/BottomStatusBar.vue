@@ -7,7 +7,7 @@
       </div>
       <div class="flex items-center space-x-4">
         <span>Active Downloads: 0</span>
-        <div class="flex items-center"><span class="mr-2">Designed by</span><span class="text-purple-600 font-medium">Readdy</span></div>
+        <div class="flex items-center"><span class="mr-2">Designed by</span><span class="text-purple-600 font-medium">Ashikur Rahman</span></div>
       </div>
     </div>
   </footer>
